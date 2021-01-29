@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -210,22 +211,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             Ray ray = m_Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 1f));
             RaycastHit hit;
 
+            
+            
             if (Physics.Raycast(ray, out hit, m_Raydistance))
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.yellow);
-                Debug.Log(hit.transform.name);
-
-                if (Input.GetKeyDown(KeyCode.E) /* + is interactief object*/)
+                //Debug.Log(hit.transform.name);
+                
+                if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Interactable")
                 {
-                    /*
-                     * gameObject.DoTheThingThatShouldBeDone();
-                     */
+                    Debug.Log(hit);
+                    // Do the thing in the InteractableObjectScript (dont know the name)
+                    var action = hit.collider.gameObject.GetComponent<InteractableObject>();
+                    action.UseAction();
+                    
                 }
             }
             else
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.red);
-                Debug.Log("Did not Hit");
+                //Debug.Log("Did not Hit");
             }
         }
 
