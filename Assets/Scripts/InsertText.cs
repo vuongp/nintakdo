@@ -25,18 +25,10 @@ public class InsertText : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.F2))
-        {
-            DoTheThing();
-        }
-    }
+
     void DoTheThing()
     {
-        newText = textToEnter;
-        ReplaceVariables(textToEnter);
-        text.SetText(newText);
+
     }
     // OnValidate is called when the value in the editor changes
     void OnValidate()

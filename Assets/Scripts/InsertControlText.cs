@@ -7,7 +7,25 @@ public class InsertControlText : InsertText
 {
     public FirstPersonController player;
     public KeyCode controlToReplace;
+    public ColliderContainer[] triggerBoxes;
 
+    public void Update()
+    {
+        foreach (ColliderContainer collider in triggerBoxes)
+        {
+            if(collider.playerInside)
+            {
+                player.ChangeControl(player.currentJump, controlToReplace);
+                collider.playerInside = false;
+            }
+
+            if(collider.playerLeft)
+            {
+                player.ChangeControl(player.currentJump, player.jump);
+                collider.playerLeft = false;
+            }
+        }
+    }
     public override void ReplaceVariables(string text) //Replaces the $ with a randomly selected variable.
     {
         string[] randomVariables = new string[customVariables.Length];
@@ -24,4 +42,5 @@ public class InsertControlText : InsertText
             controlToReplace = (KeyCode)System.Enum.Parse(typeof(KeyCode), randomVariables[i]);
         }
     }
+        
 }
