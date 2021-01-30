@@ -30,6 +30,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        [Header("Original Controls")]
+        public KeyCode Jump = KeyCode.Space;
+
+
+
+
+        private KeyCode currentJump;
+
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -48,6 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+            SetControls();
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -70,7 +79,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = Input.GetKeyDown(currentJump);
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -285,5 +294,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+        private void SetControls() //Sets controls to our 'defaults'
+        {
+            currentJump = Jump;
+        }
+
+        public void ChangeControl(KeyCode original, KeyCode replacement) //Swaps controls with another KeyCode
+        {
+            original = replacement;
+        }
+
     }
 }
