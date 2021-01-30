@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class BridgeConstruction : MonoBehaviour
 {
+    public AudioSource constructionAudioSource;
+    public AudioSource destructionAudioSource;
+    
     public GameObject middleBridge;
     private Slider _bridgeSlider;
 
