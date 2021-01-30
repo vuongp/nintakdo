@@ -31,12 +31,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         [Header("Original Controls")]
-        public KeyCode Jump = KeyCode.Space;
+        public KeyCode jump = KeyCode.Space;
 
 
 
 
-        private KeyCode currentJump;
+        public KeyCode currentJump;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -297,12 +297,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void SetControls() //Sets controls to our 'defaults'
         {
-            currentJump = Jump;
+            currentJump = jump;
         }
 
         public void ChangeControl(KeyCode original, KeyCode replacement) //Swaps controls with another KeyCode
         {
-            original = replacement;
+            Debug.Log("Replacing " + original + " with " + replacement);
+            currentJump = replacement;
         }
 
     }

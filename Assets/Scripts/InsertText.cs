@@ -27,9 +27,17 @@ public class InsertText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.F2))
+        {
+            DoTheThing();
+        }
     }
-
+    void DoTheThing()
+    {
+        newText = textToEnter;
+        ReplaceVariables(textToEnter);
+        text.SetText(newText);
+    }
     // OnValidate is called when the value in the editor changes
     void OnValidate()
     {
@@ -55,7 +63,7 @@ public class InsertText : MonoBehaviour
         customVariables = new string[count];
     }
 
-    private void ReplaceVariables(string text) //Replaces the $ with a randomly selected variable.
+    public virtual void ReplaceVariables(string text) //Replaces the $ with a randomly selected variable.
     {
         string[] randomVariables = new string[customVariables.Length];
 
@@ -71,7 +79,7 @@ public class InsertText : MonoBehaviour
         }
     }
 
-    private string ReplaceFirst(string text, string search, string replace) //Replaces the first occurence of a string with another string.
+    public string ReplaceFirst(string text, string search, string replace) //Replaces the first occurence of a string with another string.
     {
         int pos = text.IndexOf(search);
         if (pos < 0)
