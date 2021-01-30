@@ -210,18 +210,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             Ray ray = m_Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 1f));
             RaycastHit hit;
-
-            
             
             if (Physics.Raycast(ray, out hit, m_Raydistance))
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.yellow);
-                //Debug.Log(hit.transform.name);
                 
-                if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Interactable")
+                if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.GetComponent<InteractableObject>() != null)
                 {
                     Debug.Log(hit);
-                    // Do the thing in the InteractableObjectScript (dont know the name)
+                    // Do the thing in the InteractableObjectScriptChild (dont know the name)
                     var action = hit.collider.gameObject.GetComponent<InteractableObject>();
                     action.UseAction();
                     
@@ -230,7 +227,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.red);
-                //Debug.Log("Did not Hit");
             }
         }
 
