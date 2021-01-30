@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -42,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private float m_Raydistance;
 
         // Use this for initialization
         private void Start()
@@ -56,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            m_Raydistance = 1f;
         }
 
 
@@ -63,6 +66,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
             RotateView();
+            CastRay();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
@@ -201,6 +205,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
+        // Simple raycast for use function.
+        private void CastRay()
+        {
+            Ray ray = m_Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 1f));
+            RaycastHit hit;
+            
+            if (Physics.Raycast(ray, out hit, m_Raydistance))
+            {
+                Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.yellow);
+                
+                if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.GetComponent<InteractableObject>() != null)
+                {
+                    Debug.Log(hit);
+                    // Do the thing in the InteractableObjectScriptChild (dont know the name)
+                    var action = hit.collider.gameObject.GetComponent<InteractableObject>();
+                    action.UseAction();
+                    
+                }
+            }
+            else
+            {
+                Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.red);
+            }
+        }
 
         private void GetInput(out float speed)
         {
@@ -209,6 +237,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
             bool waswalking = m_IsWalking;
+            
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
