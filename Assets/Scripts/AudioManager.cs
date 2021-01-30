@@ -1,14 +1,16 @@
 using System;
+using TMPro;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public Text subtitle;
+    public TextMeshProUGUI subtitle;
     public Sound[] sounds;
 
-    [HideInInspector]
-    public Sound currentSound;
+    public int currentSoundIndex = 0;
+    public bool playOnAwake = false;
     
     private void Awake()
     {
@@ -17,25 +19,29 @@ public class AudioManager : MonoBehaviour
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.clip = sound.clip;
         }
-    }
 
-    private void Start()
-    {
-        Play("welcome");
+        if (playOnAwake)
+        {
+            sounds[currentSoundIndex].source.Play();
+        }
     }
 
     private void Update()
     {
-        if (currentSound.source.isPlaying)
+        if (sounds[currentSoundIndex].source.isPlaying)
         {
-            subtitle.text = currentSound.GetSubtitleTextForTime(currentSound.source.time);
+            subtitle.text = sounds[currentSoundIndex].GetSubtitleTextForTime(sounds[currentSoundIndex].source.time);
+        }
+        else
+        {
+            subtitle.text = "";
         }
     }
 
     public void Play(string soundName)
     {
-        currentSound = Array.Find(sounds, sound => sound.name == soundName);
-        currentSound.source.Play();
+        currentSoundIndex = Array.FindIndex(sounds, sound => sound.name == soundName);
+        sounds[currentSoundIndex].source.Play();
     }
     
 }
