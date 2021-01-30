@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1218823448864287885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218823448864287884}
+  - component: {fileID: 1218823448864287887}
+  m_Layer: 5
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!224 &1218823448864287884
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218823448864287885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1218823448864287887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218823448864287885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99c8870c5321564d8bb8ee917d6b863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitle: {fileID: 0}
+  sounds:
+  - name: welcome
+    clip: {fileID: 8300000, guid: a5fa75e89cc8f62eea4d3a7492062dba, type: 3}
+    subtitles:
+    - timestampInSeconds: 1.02
+      text: Welcome to the best game ever
+    - timestampInSeconds: 4.61
+      text: Yeah... I said it
+    - timestampInSeconds: 7
+      text: There are crazy boss fights
+    - timestampInSeconds: 8
+      text: RTX graphics
+    - timestampInSeconds: 10
+      text: Immersive stories
+    - timestampInSeconds: 11
+      text: its open world... sandbox?
+    - timestampInSeconds: 14
+      text: deeply engaging
+    - timestampInSeconds: 15
+      text: cutting edge technology
+    - timestampInSeconds: 16.99
+      text: Multiple realities
+    - timestampInSeconds: 18.7
+      text: even...
+    - timestampInSeconds: 20.18
+      text: relationships!
+    - timestampInSeconds: 22.96
+      text: But lets get you through the tutorial first!
+    source: {fileID: 0}
+  - name: Ending
+    clip: {fileID: 8300000, guid: 1bc5ce3b5e44ef868a0dcbe68bd69748, type: 3}
+    subtitles:
+    - timestampInSeconds: 2.6
+      text: Oh jolly oh jolly
+    - timestampInSeconds: 3
+      text: You finished a game
+    - timestampInSeconds: 5
+      text: Congrats for having a functional brain
+    - timestampInSeconds: 7
+      text: It was a struggle
+    - timestampInSeconds: 8
+      text: A challenge
+    - timestampInSeconds: 9
+      text: A chore
+    - timestampInSeconds: 10
+      text: But atleast there is no more
+    source: {fileID: 0}
+  currentSoundIndex: 0
+  playOnAwake: 0

@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/MainMenu.unity
+    guid: e62dc512ce65f28c2a91dcef0b3cb666
   - enabled: 1
-    path: Assets/Scenes/FPS_Test_Scene.unity
-    guid: 270b442c9c670a142885f8c31a937d4b
+    path: Assets/Scenes/Puzzle_Bridge.unity
+    guid: b19112412738a944db638e87c9c871c0
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: b12a0ab18ce270e4ea4752e97c529ef5
   m_configObjects: {}
