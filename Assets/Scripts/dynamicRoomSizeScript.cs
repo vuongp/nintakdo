@@ -10,7 +10,7 @@ public class dynamicRoomSizeScript : RoomSizeScript
         if (GetComponent<RoomScript>().active)
         {
             float distance =(2 * (player.transform.position - transform.position)).z;
-            if (distance > 1)
+            if (distance > 0.5)
             {
                 transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, distance);
                 foreach (Transform child in transform)
