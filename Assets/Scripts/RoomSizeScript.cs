@@ -68,12 +68,12 @@ public class RoomSizeScript : MonoBehaviour
             vertices[5 + i * 6] = new Vector3( (10 * (i + 1) / (exitWallDoors + 1)) -5 + doorsize / 2, 0, -5) + (((exitWallDoors - 1) / 2 == i) ? Vector3.zero : new Vector3(0.5f, 0, 0));
             vertices[6 + i * 6] = new Vector3( (10 *( i + 1) / (exitWallDoors + 1)) -  5 + doorsize / 2, 0, - 5+doorHeight) + (((exitWallDoors - 1) / 2 == i) ? Vector3.zero : new Vector3(0.5f, 0, 0));
             vertices[7 + i * 6] = new Vector3( (10  * (i + 1) / (exitWallDoors + 1)) -  5 + doorsize / 2, 0, 5) + (((exitWallDoors - 1) / 2 == i) ? Vector3.zero : new Vector3(0.5f, 0, 0));
-
-            Instantiate(door, wall.position+new Vector3((10 * transform.localScale.x * (i + 1) / (exitWallDoors + 1)) - transform.localScale.x *5, -5 * transform.localScale.y,0),Quaternion.AngleAxis(180,Vector3.up));
-            GameObject doorobj = Instantiate(door, wall.position+new Vector3((10 * transform.localScale.x * (i + 1) / (exitWallDoors + 1)) - transform.localScale.x *5, -5,0),Quaternion.AngleAxis(180,Vector3.up));
+            
+            GameObject doorobj = Instantiate(door, wall.position + new Vector3((10 * transform.localScale.x * (i + 1) / (exitWallDoors + 1)) - transform.localScale.x * 5, -5 * transform.localScale.y, 0), Quaternion.AngleAxis(180, Vector3.up));
             doorobj.transform.SetParent(transform.Find("Doors"));
             if (i + 1 == correctDoor) {
                 doorobj.AddComponent<DoorScript>();
+                doorobj.AddComponent<MeshCollider>();
             }
         }
         vertices[3 + 6 * exitWallDoors] = new Vector3(5, 0, -5);
