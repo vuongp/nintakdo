@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: e62dc512ce65f28c2a91dcef0b3cb666
   - enabled: 1
-    path: Assets/Scenes/Puzzle_Bridge.unity
-    guid: b19112412738a944db638e87c9c871c0
+    path: Assets/Scenes/LevelScene.unity
+    guid: f0a47d28a95080e48b66278f79d23c10
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: b12a0ab18ce270e4ea4752e97c529ef5

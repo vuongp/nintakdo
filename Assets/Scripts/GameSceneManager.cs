@@ -14,7 +14,7 @@ public class GameSceneManager : MonoBehaviour
     public void loadNewGame()
     {
         gameInfo.newGameCount++;
-        SceneManager.LoadScene("Scenes/Puzzle_Bridge");
+        SceneManager.LoadScene("Scenes/LevelScene");
     }
     /**
      * Example usage of a sceneLoad

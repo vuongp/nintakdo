@@ -25,8 +25,7 @@ public class RoomScript : MonoBehaviour
         }
     }
 
-    void LevelComplete
-  ()
+    public void LevelComplete()
     {
         if (nextRoom != null) {
             player.GetComponent<CharacterController>().enabled = false;
