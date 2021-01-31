@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class SettingsCogScript : MonoBehaviour
 {
-    public GameObject gameObject;
+    public GameObject popupGameObject;
     
     public GameObject playerObject;
     private FirstPersonController _firstPersonController;
@@ -20,7 +20,7 @@ public class SettingsCogScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.F1))
         {
-            if (gameObject.activeSelf)
+            if (popupGameObject.activeSelf)
             {
                 CloseSettings();
             }
@@ -33,14 +33,14 @@ public class SettingsCogScript : MonoBehaviour
 
     public void ShowSettings()
     {
-        gameObject.SetActive(true);
+        popupGameObject.SetActive(true);
         _firstPersonController.GetMouseLook().SetCursorLock(false);
         _firstPersonController.enabled = false;
     }
 
     public void CloseSettings()
     {
-        gameObject.SetActive(false);
+        popupGameObject.SetActive(false);
         _firstPersonController.GetMouseLook().SetCursorLock(true);
         _firstPersonController.enabled = true;
     }

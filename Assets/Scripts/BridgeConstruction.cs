@@ -33,45 +33,9 @@ public class BridgeConstruction : MonoBehaviour
 
     private void SlideBridgeParts(Slider slider)
     {
-        if (slider.value == 1)
+        for (int i = 0; i < 10; i++)
         {
-            bridgeParts[0].SetActive(true);
-        } else if (slider.value == 2)
-        {
-            bridgeParts[1].SetActive(true);
-        } else if (slider.value == 3)
-        {
-            bridgeParts[2].SetActive(true);
-        } else if (slider.value == 4)
-        {
-            bridgeParts[3].SetActive(true);
-        } else if (slider.value == 5)
-        {
-            bridgeParts[4].SetActive(true);
-        } else if (slider.value == 6)
-        {
-            bridgeParts[5].SetActive(true);
-        } else if (slider.value == 7)
-        {
-            bridgeParts[6].SetActive(true);
-        } else if (slider.value == 8)
-        {
-            bridgeParts[7].SetActive(true);
-        } else if (slider.value == 9)
-        {
-            bridgeParts[8].SetActive(true);
-        } else if (slider.value == 10)
-        {
-            bridgeParts[9].SetActive(true);
+            bridgeParts[i].SetActive(i <= slider.value);
         }
-        else
-        {
-            foreach (GameObject go in bridgeParts)
-            {
-                go.SetActive(false);
-            }
-        }
-        
-        
     }
 }

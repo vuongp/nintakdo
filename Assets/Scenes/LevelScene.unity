@@ -2153,6 +2153,11 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 98483989}
+    - target: {fileID: 7630079392336319468, guid: 200ed7464035c44d991423a456155c2a,
+        type: 3}
+      propertyPath: popupGameObject
+      value: 
+      objectReference: {fileID: 197213690}
     - target: {fileID: 7630079392336319471, guid: 200ed7464035c44d991423a456155c2a,
         type: 3}
       propertyPath: m_Pivot.x
