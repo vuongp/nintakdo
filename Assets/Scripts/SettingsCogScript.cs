@@ -7,6 +7,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class SettingsCogScript : MonoBehaviour
 {
     public GameObject popupGameObject;
+    public GameObject crosshair;
     
     public GameObject playerObject;
     private FirstPersonController _firstPersonController;
@@ -36,6 +37,7 @@ public class SettingsCogScript : MonoBehaviour
         popupGameObject.SetActive(true);
         _firstPersonController.GetMouseLook().SetCursorLock(false);
         _firstPersonController.enabled = false;
+        crosshair.SetActive(false);
     }
 
     public void CloseSettings()
@@ -43,5 +45,6 @@ public class SettingsCogScript : MonoBehaviour
         popupGameObject.SetActive(false);
         _firstPersonController.GetMouseLook().SetCursorLock(true);
         _firstPersonController.enabled = true;
+        crosshair.SetActive(true);
     }
 }
