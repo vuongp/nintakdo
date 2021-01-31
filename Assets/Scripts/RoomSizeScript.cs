@@ -11,7 +11,7 @@ public class RoomSizeScript : MonoBehaviour
     float doorHeight;
     public int correctDoor;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         doorsize = door.GetComponent<Renderer>().bounds.size.x / transform.localScale.x;//2 / transform.localScale.x; 
         doorHeight = door.GetComponent<Renderer>().bounds.size.y;
