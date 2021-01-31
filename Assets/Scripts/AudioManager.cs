@@ -1,8 +1,6 @@
 using System;
 using TMPro;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -45,6 +43,10 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string soundName)
     {
+        if (IsPlaying())
+        {
+            sounds[currentSoundIndex].source.Stop();
+        }
         currentSoundIndex = Array.FindIndex(sounds, sound => sound.name == soundName);
         sounds[currentSoundIndex].source.Play();
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1218823448864287885
+--- !u!1 &7658641682293711236
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1218823448864287884}
-  - component: {fileID: 1218823448864287887}
+  - component: {fileID: 7658641682293711237}
+  - component: {fileID: 7658641682293711238}
   m_Layer: 5
-  m_Name: AudioManager
+  m_Name: AudioManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!224 &1218823448864287884
+--- !u!224 &7658641682293711237
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218823448864287885}
+  m_GameObject: {fileID: 7658641682293711236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,13 +36,13 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1218823448864287887
+--- !u!114 &7658641682293711238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218823448864287885}
+  m_GameObject: {fileID: 7658641682293711236}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c99c8870c5321564d8bb8ee917d6b863, type: 3}
@@ -108,7 +108,7 @@ MonoBehaviour:
     - timestampInSeconds: 6
       text: Never mind that
     - timestampInSeconds: 7
-      text: We will have much more time late on to chit chat
+      text: We will have much more time later on to chit chat
     - timestampInSeconds: 9.6
       text: For now lets cross this bridge
     source: {fileID: 0}
@@ -167,8 +167,10 @@ MonoBehaviour:
     subtitles:
     - timestampInSeconds: 0
       text: Isn't it fun playing with me?
-    - timestampInSeconds: 3
-      text: You know... you could stay here forever
+    - timestampInSeconds: 2
+      text: You know...
+    - timestampInSeconds: 4
+      text: you could stay here forever
     source: {fileID: 0}
   - name: Moving room hint 2
     clip: {fileID: 8300000, guid: e8ba4136582573bfab70dfe7368d68fd, type: 3}
@@ -182,17 +184,29 @@ MonoBehaviour:
     - timestampInSeconds: 6
       text: I'm so lonely
     source: {fileID: 0}
-  - name: Moving room hint 2
-    clip: {fileID: 8300000, guid: e8ba4136582573bfab70dfe7368d68fd, type: 3}
+  - name: Jump quest hint 1
+    clip: {fileID: 8300000, guid: 717b70630bbe761feb5388d5777b8ba9, type: 3}
     subtitles:
     - timestampInSeconds: 0
-      text: Why do you wanna leave me?
-    - timestampInSeconds: 2
-      text: Please just stay
-    - timestampInSeconds: 4
-      text: Everyone leaves me
-    - timestampInSeconds: 6
-      text: I'm so lonely
+      text: Time for a workout!
     source: {fileID: 0}
-  currentSoundIndex: 0
-  playOnAwake: 0
+  - name: Jump quest hint 2
+    clip: {fileID: 8300000, guid: 8341c0192c758ff5688b5c346ccb99c1, type: 3}
+    subtitles:
+    - timestampInSeconds: 0
+      text: Skipped leg day ay?
+    source: {fileID: 0}
+  - name: Jump quest hint 3
+    clip: {fileID: 8300000, guid: 9b6c5cde48ade10798f537e1d4faddfc, type: 3}
+    subtitles:
+    - timestampInSeconds: 0
+      text: Did you fall for me?
+    source: {fileID: 0}
+  - name: Jump quest hint 4
+    clip: {fileID: 8300000, guid: 1084eec02e972aa88a2fbae07339e2c2, type: 3}
+    subtitles:
+    - timestampInSeconds: 0
+      text: So.. you wanna jump away from me, fine
+    source: {fileID: 0}
+  currentSoundIndex: 2
+  playOnAwake: 1

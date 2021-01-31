@@ -10,6 +10,7 @@ public class RoomScript : MonoBehaviour
     public bool active;
     public bool firstroom = false;
     private GameSceneManager _gameSceneManager;
+    public NarratorScript narratorScript; 
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,10 @@ public class RoomScript : MonoBehaviour
             nextRoom.GetComponent<RoomScript>().active = true;
             active = false;
             player.GetComponent<CharacterController>().enabled = true;
+            if (narratorScript != null)
+            {
+                narratorScript.NextLevel();
+            }
         } else
         {
             _gameSceneManager.LoadWinScreen();
