@@ -7,7 +7,7 @@ public class RoomScript : MonoBehaviour
 {
     public GameObject nextRoom;
     public GameObject player;
-    bool active;
+    public bool active;
     public bool firstroom = false;
 
     // Start is called before the first frame update
