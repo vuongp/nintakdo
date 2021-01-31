@@ -11,19 +11,24 @@ public class GameSceneManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
-    public void loadNewGame()
+    public void LoadNewGame()
     {
         gameInfo.newGameCount++;
+        SceneManager.LoadScene("Scenes/Intro");
+    }
+    
+    public void LoadLevelScene()
+    {
         SceneManager.LoadScene("Scenes/LevelScene");
     }
     /**
      * Example usage of a sceneLoad
      */
-    public void loadMainMenu(bool shouldReset)
+    public void LoadMainMenu(bool shouldReset)
     {
         if (shouldReset)
         {
-            reset();
+            Reset();
         }
         SceneManager.LoadScene("Scenes/MainMenu");
     }
@@ -33,7 +38,7 @@ public class GameSceneManager : MonoBehaviour
         return gameInfo;
     }
 
-    public void reset()
+    public void Reset()
     {
         gameInfo = new GameInfo();
     }
@@ -44,4 +49,8 @@ public class GameSceneManager : MonoBehaviour
         return gameObject == null ? null : gameObject.GetComponent<GameSceneManager>();
     }
 
+    public void LoadWinScreen()
+    {
+        SceneManager.LoadScene("Scenes/WinScreen");
+    }
 }

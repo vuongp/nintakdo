@@ -51,32 +51,32 @@ MonoBehaviour:
   subtitle: {fileID: 0}
   sounds:
   - name: welcome
-    clip: {fileID: 8300000, guid: a5fa75e89cc8f62eea4d3a7492062dba, type: 3}
+    clip: {fileID: 8300000, guid: e7ce7c5a6ab5732f881cb3fbbcfe178f, type: 3}
     subtitles:
-    - timestampInSeconds: 1.02
+    - timestampInSeconds: 0
       text: Welcome to the best game ever
-    - timestampInSeconds: 4.61
-      text: Yeah... I said it
-    - timestampInSeconds: 7
-      text: There are crazy boss fights
+    - timestampInSeconds: 3
+      text: Your mind will be blown
+    - timestampInSeconds: 6
+      text: With crazy boss fights
     - timestampInSeconds: 8
-      text: RTX graphics
+      text: 200 player raids
     - timestampInSeconds: 10
-      text: Immersive stories
-    - timestampInSeconds: 11
-      text: its open world... sandbox?
-    - timestampInSeconds: 14
-      text: deeply engaging
-    - timestampInSeconds: 15
-      text: cutting edge technology
-    - timestampInSeconds: 16.99
-      text: Multiple realities
-    - timestampInSeconds: 18.7
-      text: even...
-    - timestampInSeconds: 20.18
-      text: relationships!
-    - timestampInSeconds: 22.96
-      text: But lets get you through the tutorial first!
+      text: 10/10 - IGN
+    - timestampInSeconds: 14.65
+      text: Top 200 IMDB & Metacritic
+    - timestampInSeconds: 17
+      text: Its not even a movie
+    - timestampInSeconds: 20
+      text: Winner Global Game Jam 2030
+    - timestampInSeconds: 24.6
+      text: RTX graphics???
+    - timestampInSeconds: 26.94
+      text: 'You will be shocked '
+    - timestampInSeconds: 29.2
+      text: But first....
+    - timestampInSeconds: 30.5
+      text: Lets head into a quick tutorial
     source: {fileID: 0}
   - name: Ending
     clip: {fileID: 8300000, guid: 1bc5ce3b5e44ef868a0dcbe68bd69748, type: 3}
@@ -95,6 +95,22 @@ MonoBehaviour:
       text: A chore
     - timestampInSeconds: 10
       text: But atleast there is no more
+    source: {fileID: 0}
+  - name: Bridge Intro
+    clip: {fileID: 8300000, guid: feacc5d769fdf1a02b13bc2b4124a066, type: 3}
+    subtitles:
+    - timestampInSeconds: 1
+      text: Well hello there!
+    - timestampInSeconds: 2
+      text: Its been so long since I have seen someone
+    - timestampInSeconds: 4
+      text: How are you doing?
+    - timestampInSeconds: 6
+      text: Never mind that
+    - timestampInSeconds: 7
+      text: We will have much more time late on to chit chat
+    - timestampInSeconds: 9
+      text: For now lets cross this bridge
     source: {fileID: 0}
   currentSoundIndex: 0
   playOnAwake: 0

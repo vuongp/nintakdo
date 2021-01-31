@@ -23,7 +23,7 @@ public class MoveCameraForward : MonoBehaviour
         if (gameObject.transform.position.z > moveToMainScreenThreshold)
         {
             speed = 0f;
-            _gameSceneManager.loadMainMenu(true);
+            _gameSceneManager.LoadMainMenu(true);
         }
     }
 }

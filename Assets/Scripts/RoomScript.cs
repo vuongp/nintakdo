@@ -9,22 +9,15 @@ public class RoomScript : MonoBehaviour
     public GameObject player;
     public bool active;
     public bool firstroom = false;
+    private GameSceneManager _gameSceneManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        _gameSceneManager = GameSceneManager.FindGameSceneManager();
         active = firstroom;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (active)
-        {
-            if (Input.GetKeyDown(KeyCode.Q)) { LevelComplete(); }
-        }
-    }
-
+    
     public void LevelComplete()
     {
         if (nextRoom != null) {
@@ -35,7 +28,7 @@ public class RoomScript : MonoBehaviour
             player.GetComponent<CharacterController>().enabled = true;
         } else
         {
-            //TODO:Win
+            _gameSceneManager.LoadWinScreen();
         }
     }
 }

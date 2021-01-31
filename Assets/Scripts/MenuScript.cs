@@ -18,14 +18,14 @@ public class MenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            _gameSceneManager.reset();
+            _gameSceneManager.Reset();
             gameResetObject.SetActive(true);
         }
     }
 
     public void NewGame()
     {
-        GameSceneManager.FindGameSceneManager().loadNewGame();
+        GameSceneManager.FindGameSceneManager().LoadNewGame();
     }
     
     public void Quit()
