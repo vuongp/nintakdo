@@ -222,14 +222,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Physics.Raycast(ray, out hit, m_Raydistance))
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * m_Raydistance, Color.yellow);
-                
+
                 if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.GetComponent<InteractableObject>() != null)
                 {
                     Debug.Log(hit);
                     // Do the thing in the InteractableObjectScriptChild (dont know the name)
                     var action = hit.collider.gameObject.GetComponent<InteractableObject>();
                     action.UseAction();
-                    
+
+                }
+                else if (hit.collider.gameObject.GetComponent<DoorScript>() != null) {
+                    var door = hit.collider.gameObject.GetComponent<DoorScript>();
+                    door.HoverAction();
                 }
             }
             else

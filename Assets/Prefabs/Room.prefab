@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextRoom: {fileID: 0}
   player: {fileID: 0}
+  active: 0
   firstroom: 0
 --- !u!1 &6208754869521663701
 GameObject:

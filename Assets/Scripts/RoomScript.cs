@@ -15,16 +15,7 @@ public class RoomScript : MonoBehaviour
     {
         active = firstroom;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (active)
-        {
-            if (Input.GetKeyDown(KeyCode.Q)) { LevelComplete(); }
-        }
-    }
-
+    
     public void LevelComplete()
     {
         if (nextRoom != null) {
