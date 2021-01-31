@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class BridgeConstruction : MonoBehaviour
 {
-    public AudioSource constructionAudioSource;
-    public AudioSource destructionAudioSource;
+    public AudioSource audioSource;
+    public AudioClip constructionAudioClip;
+    public AudioClip destructionAudioClip;
+
     
     public GameObject middleBridge;
     private Slider _bridgeSlider;
+    private int previousFrameProgress;
 
     public List<GameObject> bridgeParts;
     private void Start()
@@ -33,6 +36,16 @@ public class BridgeConstruction : MonoBehaviour
 
     private void SlideBridgeParts(Slider slider)
     {
+        if (slider.value > previousFrameProgress) {
+            audioSource.Stop();
+            audioSource.PlayOneShot(constructionAudioClip);
+        }
+        else if (slider.value < previousFrameProgress)
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(destructionAudioClip);
+        }
+        previousFrameProgress = (int) slider.value;
         for (int i = 0; i < 10; i++)
         {
             bridgeParts[i].SetActive(i <= slider.value);
