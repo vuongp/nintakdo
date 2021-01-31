@@ -6,6 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class InsertControlText : InsertText
 {
     public FirstPersonController player;
+    public enum ReplaceKey { SPRINT, JUMP };
+    public ReplaceKey replaceKey;
     public KeyCode controlToReplace;
     public ColliderContainer[] triggerBoxes;
 
@@ -15,14 +17,30 @@ public class InsertControlText : InsertText
         {
             if(collider.playerInside)
             {
-                player.ChangeControl(player.currentJump, controlToReplace);
-                collider.playerInside = false;
+                if(replaceKey == ReplaceKey.SPRINT)
+                {
+                    player.ChangeRun(controlToReplace);
+                    collider.playerInside = false;
+                }
+                if(replaceKey == ReplaceKey.JUMP)
+                {
+                    player.ChangeJump(controlToReplace);
+                    collider.playerInside = false;
+                }
             }
 
             if(collider.playerLeft)
             {
-                player.ChangeControl(player.currentJump, player.jump);
-                collider.playerLeft = false;
+                if (replaceKey == ReplaceKey.SPRINT)
+                {
+                    player.ChangeRun(player.run);
+                    collider.playerLeft = false;
+                }
+                if (replaceKey == ReplaceKey.JUMP)
+                {
+                    player.ChangeJump(player.jump);
+                    collider.playerLeft = false;
+                }
             }
         }
     }

@@ -32,11 +32,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         [Header("Original Controls")]
         public KeyCode jump = KeyCode.Space;
-
-
-
+        public KeyCode run = KeyCode.LeftShift;
 
         public KeyCode currentJump;
+        public KeyCode currentRun;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -251,7 +250,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            m_IsWalking = !Input.GetKey(currentRun);
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
@@ -298,12 +297,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void SetControls() //Sets controls to our 'defaults'
         {
             currentJump = jump;
+            currentRun = run;
         }
 
-        public void ChangeControl(KeyCode original, KeyCode replacement) //Swaps controls with another KeyCode
+        public void ChangeJump(KeyCode replacement) //Swaps controls with another KeyCode
         {
-            Debug.Log("Replacing " + original + " with " + replacement);
+            Debug.Log("Jump is now: " + replacement);
+
             currentJump = replacement;
+        }
+
+        public void ChangeRun(KeyCode replacement) //Swaps controls with another KeyCode
+        {
+            Debug.Log("Sprint is now: " + replacement);
+
+            currentRun = replacement;
         }
 
     }

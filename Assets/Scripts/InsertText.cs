@@ -24,12 +24,6 @@ public class InsertText : MonoBehaviour
         text.SetText(newText);
     }
 
-    // Update is called once per frame
-
-    void DoTheThing()
-    {
-
-    }
     // OnValidate is called when the value in the editor changes
     void OnValidate()
     {

@@ -13,7 +13,7 @@ public class RoomSizeScript : MonoBehaviour
     void Start()
     {
         doorsize = door.GetComponent<Renderer>().bounds.size.x / transform.localScale.x;//2 / transform.localScale.x; 
-        doorHeight = door.GetComponent<Renderer>().bounds.size.y;
+        doorHeight = door.GetComponent<Renderer>().bounds.size.y / transform.localScale.y;
         foreach (Transform child in transform)
         {
             if (child.tag == "Room")
@@ -71,7 +71,7 @@ public class RoomSizeScript : MonoBehaviour
             Debug.Log(vertices[7 + i * 6]);
 
 
-            Instantiate(door, wall.position+new Vector3((10 * transform.localScale.x * (i + 1) / (exitWallDoors + 1)) - transform.localScale.x *5, -5,0),Quaternion.AngleAxis(180,Vector3.up));
+            Instantiate(door, wall.position+new Vector3((10 * transform.localScale.x * (i + 1) / (exitWallDoors + 1)) - transform.localScale.x *5, -5 * transform.localScale.y,0),Quaternion.AngleAxis(180,Vector3.up));
         }
         vertices[3 + 6 * exitWallDoors] = new Vector3(5, 0, -5);
         vertices[2 + 6 * exitWallDoors] = new Vector3(5, 0, 5);
