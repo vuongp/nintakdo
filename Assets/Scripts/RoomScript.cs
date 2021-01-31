@@ -9,10 +9,12 @@ public class RoomScript : MonoBehaviour
     public GameObject player;
     public bool active;
     public bool firstroom = false;
+    private GameSceneManager _gameSceneManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        _gameSceneManager = GameSceneManager.FindGameSceneManager();
         active = firstroom;
     }
 
@@ -35,7 +37,7 @@ public class RoomScript : MonoBehaviour
             player.GetComponent<CharacterController>().enabled = true;
         } else
         {
-            //TODO:Win
+            _gameSceneManager.LoadWinScreen();
         }
     }
 }

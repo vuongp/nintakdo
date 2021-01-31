@@ -15,4 +15,9 @@ public class GameSceneManagerInstantiator : MonoBehaviour
             Instantiate(gameSceneManager, new Vector3(0, 0, 0), Quaternion.identity);   
         }
     }
+
+    public void MoveToLevelScene()
+    {
+        gameSceneManager.LoadNewGame();
+    }
 }

@@ -38,6 +38,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public bool IsPlaying()
+    {
+        return sounds[currentSoundIndex].source.isPlaying;
+    }
+
     public void Play(string soundName)
     {
         currentSoundIndex = Array.FindIndex(sounds, sound => sound.name == soundName);
