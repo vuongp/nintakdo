@@ -96,5 +96,21 @@ MonoBehaviour:
     - timestampInSeconds: 10
       text: But atleast there is no more
     source: {fileID: 0}
+  - name: Bridge Intro
+    clip: {fileID: 8300000, guid: feacc5d769fdf1a02b13bc2b4124a066, type: 3}
+    subtitles:
+    - timestampInSeconds: 1
+      text: Well hello there!
+    - timestampInSeconds: 2
+      text: Its been so long since I have seen someone
+    - timestampInSeconds: 4
+      text: How are you doing?
+    - timestampInSeconds: 6
+      text: Never mind that
+    - timestampInSeconds: 7
+      text: We will have much more time late on to chit chat
+    - timestampInSeconds: 9
+      text: For now lets cross this bridge
+    source: {fileID: 0}
   currentSoundIndex: 0
   playOnAwake: 0
